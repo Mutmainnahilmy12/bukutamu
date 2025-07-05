@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buku Tamu Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Buku Tamu Digital</h1>
+
+    <nav class="menu">
+      <button onclick="showTab('guestbook')">📖 Buku Tamu</button>
+      <button onclick="showTab('notes')">📝 Catatan</button>
+      <button onclick="showTab('poll')">📊 Polling</button>
+    </nav>
+
+    <!-- TAB: Buku Tamu -->
+    <section id="guestbook" class="tab">
+      <form id="guestForm">
+        <input type="text" id="name" placeholder="Nama Anda" required />
+        <textarea id="message" placeholder="Pesan Anda" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="guestbookEntries"></div>
+    </section>
+
+    <!-- TAB: Catatan Publik -->
+    <section id="notes" class="tab" style="display:none">
+      <form id="noteForm">
+        <input type="text" id="noteName" placeholder="Nama Anda" required />
+        <textarea id="noteText" placeholder="Tulis catatanmu..." required></textarea>
+        <button type="submit">Kirim Catatan</button>
+      </form>
+      <div id="noteEntries"></div>
+    </section>
+
+    <!-- TAB: Polling -->
+    <section id="poll" class="tab" style="display:none">
+      <h3>Apa warna favoritmu?</h3>
+      <form id="pollForm">
+        <label><input type="radio" name="color" value="Ungu" /> Ungu</label><br/>
+        <label><input type="radio" name="color" value="Biru" /> Biru</label><br/>
+        <label><input type="radio" name="color" value="Pink" /> Pink</label><br/>
+        <button type="submit">Vote</button>
+      </form>
+      <div id="pollResults"></div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
